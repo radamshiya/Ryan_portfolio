@@ -1,0 +1,113 @@
+---
+interface Props {
+  href: string;
+  text: string;
+}
+
+const { href, text } = Astro.props;
+---
+
+<a href={href} class="scribble-button">
+  <svg class="scribble-svg" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+    <path 
+      class="scribble-path"
+      d="M 10,30 Q 10,10 30,10 L 170,10 Q 190,10 190,30 Q 190,50 170,50 L 30,50 Q 10,50 10,30"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      vector-effect="non-scaling-stroke"
+    />
+    <path 
+      class="scribble-path scribble-path-2"
+      d="M 12,30 Q 12,12 30,12 L 170,12 Q 188,12 188,30 Q 188,48 170,48 L 30,48 Q 12,48 12,30"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      vector-effect="non-scaling-stroke"
+    />
+  </svg>
+  <span class="scribble-text">{text}</span>
+</a>
+
+<style>
+  .scribble-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-xl);
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--fg);
+    cursor: pointer;
+    transition: transform var(--transition-base);
+  }
+
+  .scribble-button:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  .scribble-button:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .scribble-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .scribble-path {
+    transition: all var(--transition-base);
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: draw 0.8s ease-out forwards;
+  }
+
+  .scribble-path-2 {
+    animation-delay: 0.1s;
+    opacity: 0.4;
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .scribble-button:hover .scribble-path {
+    stroke-width: 2.5;
+    animation: wobble 0.6s ease-in-out infinite;
+  }
+
+  .scribble-button:hover .scribble-path-2 {
+    stroke-width: 2;
+    opacity: 0.6;
+  }
+
+  @keyframes wobble {
+    0%, 100% {
+      transform: translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateX(1px) rotate(0.5deg);
+    }
+    75% {
+      transform: translateX(-1px) rotate(-0.5deg);
+    }
+  }
+
+  .scribble-button:active .scribble-path {
+    stroke-width: 3;
+  }
+
+  .scribble-text {
+    position: relative;
+    z-index: 1;
+    padding: 0 var(--space-sm);
+  }
+</style>

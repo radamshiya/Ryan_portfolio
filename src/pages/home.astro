@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container container-sm">
+      <div class="hero-title-image">
+        <img src="/images/whoisryanadams.jpg" alt="Hello, I am Ryan Adams." />
+      </div>
+      <p class="lead">
+        I primarily work in Product Strategy, Research, & Design.
+      </p>
+      <p>
+        I'm extermely curious and try to keep learning in everything I do. <br><br>
+        Lately I've been focused on leading research and conversation design @ Hiya, and teaching AI and Research @ the University of Washington's Masters of Human-Computer Interaction + Design program. 
+        <br><br>I also love cats, music, and a good hang. 
+        <br><br>Have a look around. Got a question, idea, or want to chat? Hit me up!
+     <br><br>  -Ryan 
+     <br>Link to me <a href="https://www.linkedin.com/in/whoisryanadams">@whoisryanadams</a>
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .hero-section {
+    padding: var(--space-xl) 0;
+  }
+
+  .hero-title-image {
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-section .lead {
+    margin-bottom: var(--space-md);
+  }
+</style>

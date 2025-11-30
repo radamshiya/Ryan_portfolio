@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Expertise & Experience">
+  <section>
+    <div class="container container-sm">
+      <h1 class="handwritten">Expertise & Experience</h1>
+      <p class="lead">
+        Here is a snapshot of my core capabilities with selected highlights from years
+        of research, design, and product work.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container container-sm">
+      <!-- Core Expertise -->
+      <article class="expertise-section">
+        <h2>Core Expertise</h2>
+        <ul class="expertise-list">
+          <li>
+            <strong>Applied User Research & Insight Translation</strong><br>
+            Mixed-methods research across AI, voice, telecom, analytics, and enterprise software. Turning ambiguity into clear direction teams can act on.
+          </li>
+          <li>
+            <strong>AI, Voice, and Conversational Systems</strong><br>
+            Designing and validating AI-powered voice experiences, conversation design systems, and LLM interactions.
+          </li>
+          <li>
+            <strong>0-to-1 and Post-Acquisition Product Strategy</strong><br>
+            Shaping early-stage and newly integrated products from problem definition to production across startups, acquisitions, and platform expansions.
+          </li>
+          <li>
+            <strong>Systems Thinking & Data Storytelling</strong><br>
+            Breaking down complex systems through clear narratives, frameworks, and visualizations to drive shared understanding.
+          </li>
+          <li>
+            <strong>Collaboration, Facilitation, and Execution</strong><br>
+            A hands-on partner to product, design, engineering, and data science teams. Helping teams move forward with confidence.
+          </li>
+          <li>
+            <strong>Mentorship, Teaching, and Workforce Development</strong><br>
+            Designing and teaching applied curricula, mentoring students and practitioners, and supporting responsible technology adoption.
+          </li>
+        </ul>
+      </article>
+
+      <!-- Selected Highlights -->
+      <article class="expertise-section">
+        <h2>Selected Highlights</h2>
+        <ul class="expertise-list">
+          <li>
+            <strong>Defined conversational design standards for AI voice products</strong><br>
+            Created a conversation design system guiding zero-to-one AI voice products and helping teams navigate rapid shifts in LLM and voice technology.
+          </li>
+          <li>
+            <strong>Shipped multiple zero-to-one AI and platform products</strong><br>
+            Took new products from concept to production by grounding emerging technology in real user needs.
+          </li>
+          <li>
+            <strong>Redesigned global analytics systems under uncertainty</strong><br>
+            Rebuilt analytics foundations to ensure statistical integrity, global consistency, and long-term resilience as platforms and data sources evolved.
+          </li>
+          <li>
+            <strong>Led post-acquisition integration research</strong><br>
+            Defined integration strategy following Smartsheet's acquisition of 10,000ft by mapping real customer workflows and enabling meaningful cross-product value.
+          </li>
+          <li>
+            <strong>Deep domain expertise in voice, telecom, and hospitality systems</strong><br>
+            Conducted extensive research in telecom and voice communications at Hiya and hospitality technology at POSERA, focusing on high-volume, real-time service systems.
+          </li>
+          <li>
+            <strong>Designed and taught applied AI curriculum at the university level</strong><br>
+            Co-created and delivered generative AI workshops at the University of Washington, later expanded into a full elective based on student and faculty impact.
+          </li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .expertise-section {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .expertise-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .expertise-section h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-lg);
+    font-weight: 600;
+  }
+
+  .expertise-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .expertise-list li {
+    padding-left: 0;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 4.5rem;
+    }
+
+    .expertise-section h2 {
+      font-size: 2.25rem;
+    }
+  }
+</style>

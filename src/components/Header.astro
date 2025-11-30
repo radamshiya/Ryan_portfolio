@@ -1,0 +1,70 @@
+---
+const pathname = Astro.url.pathname;
+const isActive = (path: string) => pathname === path || pathname === path + '/';
+---
+
+<header class="site-header">
+  <nav class="container">
+    <ul class="nav-list">
+      <li><a href="/home" class:list={["nav-link", { active: isActive('/home') }]}>Home</a></li>
+      <li><a href="/approach" class:list={["nav-link", { active: isActive('/approach') }]}>Approach</a></li>
+      <li><a href="/expertise" class:list={["nav-link", { active: isActive('/expertise') }]}>Expertise & Experience</a></li>
+      <li><a href="/projects" class:list={["nav-link", { active: isActive('/projects') }]}>Projects & Schemes</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    padding: var(--space-md) 0;
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-lg);
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding: var(--space-xs) 0;
+    position: relative;
+    transition: color var(--transition-fast);
+  }
+
+  .nav-link:hover {
+    opacity: 1;
+    color: var(--muted);
+  }
+
+  .nav-link.active {
+    color: var(--fg);
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--fg);
+  }
+
+  @media (min-width: 768px) {
+    .nav-list {
+      gap: var(--space-xl);
+    }
+
+    .nav-link {
+      font-size: 1.5rem;
+    }
+  }
+</style>

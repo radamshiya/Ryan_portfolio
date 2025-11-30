@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.slug.localeCompare(b.slug));
+---
+
+<BaseLayout title="Projects & Schemes">
+  <section>
+    <div class="container">
+      <h1 class="handwritten">Projects & Schemes</h1>
+      <p class="lead">
+        Here are some samples of work I've done in the past. I kept things short and sweet to avoid oversharing in sensitive areas. Let me know if you want to learn more.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid grid-3">
+        {projects.map((project) => (
+          <ProjectCard
+            title={project.data.title}
+            summary={project.data.summary}
+            role={project.data.role}
+            date={project.data.date}
+            image={project.data.image}
+            slug={project.slug}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 4.5rem;
+    }
+  }
+</style>

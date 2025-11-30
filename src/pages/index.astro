@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ScribbleButton from '../components/ScribbleButton.astro';
+---
+
+<BaseLayout 
+  title="Who is Ryan Adams?" 
+  description="Approach, expertise, projects and other stuff"
+  showHeader={false}
+>
+  <div class="landing-page">
+    <div class="landing-content">
+      <a href="/home" class="landing-title-image">
+        <img
+          src="/images/whoisryanadams.jpg"
+          alt="Hello, I am Ryan Adams."
+        />
+      </a>
+      <a href="/home" class="hero-image-link">
+        <div class="hero-image-container">
+          <img
+            src="/images/happy_ryan.png"
+            alt="Ryan Adams smiling"
+            class="hero-image hero-image--primary"
+          />
+          <img
+            src="/images/crazy_magic_ryan.png"
+            alt="Ryan Adams in crazy magic mode"
+            class="hero-image hero-image--hover"
+          />
+        </div>
+      </a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .landing-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+  }
+
+  .landing-content {
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .landing-title {
+    font-size: 4rem;
+    margin-bottom: var(--space-sm);
+    line-height: 1.1;
+  }
+
+  .landing-title-image {
+    margin-bottom: var(--space-sm);
+  }
+
+  .landing-subtitle {
+    font-size: 0.875rem;
+    color: #333;
+    margin-bottom: var(--space-sm);
+  }
+
+  .landing-cta {
+    margin-bottom: var(--space-xl);
+    display: flex;
+    justify-content: center;
+  }
+
+  .enter-link {
+    position: relative;
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding-bottom: 0.125rem;
+  }
+
+  .enter-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: currentColor;
+  }
+
+  .hero-image-link {
+    display: inline-block;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-image-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 200ms ease-out;
+  }
+
+  .hero-image--primary {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-image--hover {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .hero-image-link:hover .hero-image--primary {
+    opacity: 0;
+  }
+
+  .hero-image-link:hover .hero-image--hover {
+    opacity: 1;
+  }
+
+  @media (min-width: 768px) {
+    .landing-title {
+      font-size: 5.5rem;
+    }
+
+    .landing-subtitle {
+      font-size: 0.875rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .landing-title {
+      font-size: 7rem;
+    }
+  }
+</style>

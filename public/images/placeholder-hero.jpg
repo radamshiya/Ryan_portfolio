@@ -1,0 +1,5 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#f5f5f5"/>
+  <text x="600" y="400" font-family="Inter, sans-serif" font-size="48" text-anchor="middle" fill="#9b9b9b">Hero Image</text>
+  <text x="600" y="450" font-family="Inter, sans-serif" font-size="24" text-anchor="middle" fill="#cccccc">1200 × 800</text>
+</svg>

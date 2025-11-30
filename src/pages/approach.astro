@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+---
+
+<BaseLayout title="Approach">
+  <section>
+    <div class="container container-sm">
+      <h1 class="handwritten">My Approach</h1>
+      <p class="lead">
+I believe in a modern, non-linear process for building products. </p>
+<p>Current tooling allows most people to quickly perform tasks like desk research and prototyping, that once required a lot of time and expertise. While these tools may not provide the rigor that you'd want for your final product, they accelerate methods to learn quickly and iterate in ways that break the mold of traditional product development.
+<br>
+<br>
+However, to take advantage of the time and money saved by these tools, certain fundamentals must be respected for products to be successful in the long haul.
+<br>
+<br>
+For those curious, I've broken down my basic approach and core tenets for how I work:
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container container-sm">
+      <div class="approach-grid">
+        <!-- Understand the Problem -->
+        <article class="approach-item">
+          <h2>1. Understand the Problem</h2>
+          <p>
+            Understand the problem will be "Step 1" always and forever. Regardless of the technology available, the understanding and obsession with the problems you're trying to solve will allow you to pivot when things change and avoid the whiplash of the latest trends.
+          </p>
+        </article>
+
+        <!-- Learn, Build, Test -->
+        <article class="approach-item">
+          <h2>2. Learn, Build, Test</h2>
+          <p>
+            Take what we know about the problem and start experimenting. Build quick prototypes. Test them and get feedback. Time and energy spent here will save a lot of money and heartache later. </p>
+        </article>
+
+        <!-- Repeat -->
+        <article class="approach-item">
+          <h2>3. Repeat</h2>
+          <p>
+            Take what you’ve learned from testing to iterate and do it all over again. Speed found with new tools gives us a chance to try different things. Be bold and try that weird idea along with the safe one.
+          </p>
+        </article>
+
+         <!-- Core Tenets -->
+      <article class="tenets-section">
+        <h2>Core Tenets</h2>
+        <ul class="tenets-list">
+          <li>
+            <div class="tenet-item">
+              <h3>Curiosity</h3>
+              <p class="muted">
+                Maintain a constant quest for knowledge.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="tenet-item">
+              <h3>Creativity</h3>
+              <p class="muted">
+                Think outside the box.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="tenet-item">
+              <h3>Compassion</h3>
+              <p class="muted">
+                Care about people using the stuff you built.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="tenet-item">
+              <h3>Collaboration</h3>
+              <p class="muted">
+                Play well with others.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="tenet-item">
+              <h3>Welcome Failure</h3>
+              <p class="muted">
+                Embrace mistakes and learn from them.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="tenet-item">
+              <h3>Conceptualize and Test</h3>
+              <p class="muted">
+                Build and test quickly on a path to a product that matters and lasts.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .approach-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  .approach-item h2 {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-md);
+    font-weight: 600;
+  }
+
+  .approach-item p {
+    color: var(--fg);
+    line-height: 1.7;
+  }
+
+  .tenets-section {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .tenets-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .tenets-section h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-lg);
+    font-weight: 600;
+  }
+
+  .tenets-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .tenet-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+  }
+
+  .tenet-item p {
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 4.5rem;
+    }
+
+    .approach-item h2 {
+      font-size: 2rem;
+    }
+
+    .tenets-section h2 {
+      font-size: 2.25rem;
+    }
+  }
+</style>

@@ -1,0 +1,5 @@
+<svg width="1200" height="675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#ebebeb"/>
+  <text x="600" y="320" font-family="Inter, sans-serif" font-size="48" text-anchor="middle" fill="#9b9b9b">Project Image 2</text>
+  <text x="600" y="370" font-family="Inter, sans-serif" font-size="24" text-anchor="middle" fill="#cccccc">1200 × 675 (16:9)</text>
+</svg>

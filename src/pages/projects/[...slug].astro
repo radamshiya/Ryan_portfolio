@@ -1,0 +1,165 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<BaseLayout title={project.data.title}>
+  <article class="project-page">
+    <!-- Hero Section -->
+    <section class="project-hero">
+      <div class="container container-sm">
+        <h1 class="handwritten">{project.data.title}</h1>
+        <div class="project-meta">
+          {project.data.role && <span class="role">{project.data.role}</span>}
+          {project.data.date && <span class="date">{project.data.date}</span>}
+        </div>
+        <p class="lead">{project.data.summary}</p>
+      </div>
+    </section>
+
+    <!-- Hero Image -->
+    {project.data.image && (
+      <section class="project-hero-image">
+        <div class="container container-sm">
+          <img src={project.data.image} alt={project.data.title} />
+        </div>
+      </section>
+    )}
+
+    <!-- Content -->
+    <section class="project-content">
+      <div class="container container-sm">
+        <div class="prose">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    <!-- Back Link -->
+    <section class="project-nav">
+      <div class="container container-sm">
+        <a href="/projects" class="back-link">← Back to Projects</a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .project-hero {
+    padding: var(--space-xl) 0 var(--space-lg);
+  }
+
+  .project-hero h1 {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .project-meta {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: var(--muted);
+  }
+
+  .project-hero-image {
+    padding-bottom: var(--space-xl);
+  }
+
+  .project-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .project-content {
+    padding-bottom: var(--space-xl);
+  }
+
+  .prose {
+    line-height: 1.8;
+  }
+
+  .prose :global(h2) {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .prose :global(h3) {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .prose :global(p) {
+    margin-bottom: var(--space-md);
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-lg);
+  }
+
+  .prose :global(li) {
+    margin-bottom: var(--space-xs);
+  }
+
+  .prose :global(.two-column) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .prose :global(.two-column) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .prose :global(.two-column .column h2) {
+    margin-top: 0;
+  }
+
+  .project-nav {
+    padding-bottom: var(--space-xl);
+  }
+
+  .back-link {
+    font-weight: 500;
+    color: var(--fg);
+  }
+
+  .back-link:hover {
+    opacity: 0.7;
+  }
+
+  @media (min-width: 768px) {
+    .project-hero h1 {
+      font-size: 4rem;
+    }
+
+    .lead {
+      font-size: 1.5rem;
+    }
+  }
+</style>

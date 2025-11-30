@@ -1,0 +1,35 @@
+---
+interface Props {
+  handwritten?: boolean;
+}
+
+const { handwritten = false } = Astro.props;
+---
+
+<h2 class:list={["section-title", { handwritten }]}>
+  <slot />
+</h2>
+
+<style>
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+  }
+
+  .section-title.handwritten {
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 3rem;
+    }
+
+    .section-title.handwritten {
+      font-size: 4rem;
+    }
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="404 - Nobody's home" 
+  showHeader={false}
+>
+  <div class="error-page">
+    <div class="error-content">
+      <h1 class="handwritten">Looks like we took a wrong turn.</h1>
+      <p class="error-message">
+        This page doesn't seem to exist. Sorry about that.
+      </p>
+      <a href="/home" class="btn">Back to Home</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .error-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+  }
+
+  .error-content {
+    max-width: 600px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .error-message {
+    font-size: 1.25rem;
+    color: var(--muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 5rem;
+    }
+
+    .error-message {
+      font-size: 1.5rem;
+    }
+  }
+</style>
