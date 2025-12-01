@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout 
@@ -12,7 +13,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="error-message">
         This page doesn't seem to exist. Sorry about that.
       </p>
-      <a href="/home" class="btn">Back to Home</a>
+      <a href={`${base}home`} class="btn">Back to Home</a>
     </div>
   </div>
 </BaseLayout>
