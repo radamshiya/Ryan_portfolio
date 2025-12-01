@@ -3,5 +3,5 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://radamshiya.github.io',
-  base: '/Ryan_portfolio',
+  base: '/Ryan_portfolio/',
 });
