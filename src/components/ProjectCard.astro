@@ -8,14 +8,16 @@ interface Props {
   slug?: string;
 }
 
+const base = import.meta.env.BASE_URL;
 const { title, summary, role, date, image, slug } = Astro.props;
-const href = slug ? `/projects/${slug}` : '#';
+const href = slug ? `${base}projects/${slug}` : '#';
+const imageSrc = image?.startsWith('/') ? `${base}${image.slice(1)}` : image;
 ---
 
 <a href={href} class="project-card">
   {image && (
     <div class="project-image">
-      <img src={image} alt={title} />
+      <img src={imageSrc} alt={title} />
     </div>
   )}
   <div class="project-content">

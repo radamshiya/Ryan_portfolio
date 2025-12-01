@@ -10,8 +10,10 @@ export async function getStaticPaths() {
   }));
 }
 
+const base = import.meta.env.BASE_URL;
 const { project } = Astro.props;
 const { Content } = await project.render();
+const imageSrc = project.data.image?.startsWith('/') ? `${base}${project.data.image.slice(1)}` : project.data.image;
 ---
 
 <BaseLayout title={project.data.title}>
@@ -32,7 +34,7 @@ const { Content } = await project.render();
     {project.data.image && (
       <section class="project-hero-image">
         <div class="container container-sm">
-          <img src={project.data.image} alt={project.data.title} />
+          <img src={imageSrc} alt={project.data.title} />
         </div>
       </section>
     )}
@@ -49,7 +51,7 @@ const { Content } = await project.render();
     <!-- Back Link -->
     <section class="project-nav">
       <div class="container container-sm">
-        <a href="/projects" class="back-link">← Back to Projects</a>
+        <a href={`${base}projects`} class="back-link">← Back to Projects</a>
       </div>
     </section>
   </article>

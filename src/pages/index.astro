@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ScribbleButton from '../components/ScribbleButton.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout 
@@ -10,21 +11,21 @@ import ScribbleButton from '../components/ScribbleButton.astro';
 >
   <div class="landing-page">
     <div class="landing-content">
-      <a href="/home" class="landing-title-image">
+      <a href={`${base}home`} class="landing-title-image">
         <img
-          src="/images/whoisryanadams.jpg"
+          src={`${base}images/whoisryanadams.jpg`}
           alt="Hello, I am Ryan Adams."
         />
       </a>
-      <a href="/home" class="hero-image-link">
+      <a href={`${base}home`} class="hero-image-link">
         <div class="hero-image-container">
           <img
-            src="/images/happy_ryan.png"
+            src={`${base}images/happy_ryan.png`}
             alt="Ryan Adams smiling"
             class="hero-image hero-image--primary"
           />
           <img
-            src="/images/crazy_magic_ryan.png"
+            src={`${base}images/crazy_magic_ryan.png`}
             alt="Ryan Adams in crazy magic mode"
             class="hero-image hero-image--hover"
           />
