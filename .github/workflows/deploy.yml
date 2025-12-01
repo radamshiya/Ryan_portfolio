@@ -25,6 +25,8 @@ jobs:
         run: npm ci
       - name: Build Astro
         run: npm run build
+      - name: Add .nojekyll file
+        run: touch dist/.nojekyll
       - name: Debug output
         run: cat dist/index.html | head -50
       - name: Upload artifact
