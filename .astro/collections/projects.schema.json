@@ -19,6 +19,12 @@
         "image": {
           "type": "string"
         },
+        "imageAlt": {
+          "type": "string"
+        },
+        "imageCaption": {
+          "type": "string"
+        },
         "featured": {
           "type": "boolean",
           "default": false

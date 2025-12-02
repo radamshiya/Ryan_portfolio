@@ -26,6 +26,7 @@ const projects = (await getCollection('projects')).sort((a, b) => a.slug.localeC
             role={project.data.role}
             date={project.data.date}
             image={project.data.image}
+            imageAlt={project.data.imageAlt}
             slug={project.slug}
           />
         ))}

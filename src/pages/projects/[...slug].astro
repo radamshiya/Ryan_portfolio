@@ -34,7 +34,12 @@ const imageSrc = project.data.image?.startsWith('/') ? `${base}${project.data.im
     {project.data.image && (
       <section class="project-hero-image">
         <div class="container container-sm">
-          <img src={imageSrc} alt={project.data.title} />
+          <figure>
+            <img src={imageSrc} alt={project.data.imageAlt || project.data.title} />
+            {project.data.imageCaption && (
+              <figcaption>{project.data.imageCaption}</figcaption>
+            )}
+          </figure>
         </div>
       </section>
     )}
@@ -42,7 +47,7 @@ const imageSrc = project.data.image?.startsWith('/') ? `${base}${project.data.im
     <!-- Content -->
     <section class="project-content">
       <div class="container container-sm">
-        <div class="prose">
+        <div class="prose" id="project-prose">
           <Content />
         </div>
       </div>
@@ -56,6 +61,22 @@ const imageSrc = project.data.image?.startsWith('/') ? `${base}${project.data.im
     </section>
   </article>
 </BaseLayout>
+
+<script define:vars={{ base }}>
+  // Fix image paths in markdown content to include base URL
+  document.addEventListener('DOMContentLoaded', () => {
+    const prose = document.getElementById('project-prose');
+    if (prose) {
+      const images = prose.querySelectorAll('img');
+      images.forEach(img => {
+        const src = img.getAttribute('src');
+        if (src && src.startsWith('/images/')) {
+          img.setAttribute('src', base + src.slice(1));
+        }
+      });
+    }
+  });
+</script>
 
 <style>
   .project-hero {
@@ -84,10 +105,22 @@ const imageSrc = project.data.image?.startsWith('/') ? `${base}${project.data.im
     padding-bottom: var(--space-xl);
   }
 
+  .project-hero-image figure {
+    margin: 0;
+  }
+
   .project-hero-image img {
     width: 100%;
     height: auto;
     border-radius: 4px;
+  }
+
+  .project-hero-image figcaption {
+    margin-top: var(--space-sm);
+    font-size: 0.875rem;
+    color: var(--muted);
+    text-align: center;
+    font-style: italic;
   }
 
   .project-content {
@@ -140,6 +173,42 @@ const imageSrc = project.data.image?.startsWith('/') ? `${base}${project.data.im
 
   .prose :global(.two-column .column h2) {
     margin-top: 0;
+  }
+
+  /* Inline floating images */
+  .prose :global(figure.float-right),
+  .prose :global(figure.float-left) {
+    margin: 0 0 var(--space-md) 0;
+    max-width: 100%;
+  }
+
+  .prose :global(figure.float-right img),
+  .prose :global(figure.float-left img) {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .prose :global(figure.float-right figcaption),
+  .prose :global(figure.float-left figcaption) {
+    margin-top: var(--space-xs);
+    font-size: 0.875rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  @media (min-width: 768px) {
+    .prose :global(figure.float-right) {
+      float: right;
+      max-width: 45%;
+      margin: 0 0 var(--space-lg) var(--space-lg);
+    }
+
+    .prose :global(figure.float-left) {
+      float: left;
+      max-width: 45%;
+      margin: 0 var(--space-lg) var(--space-lg) 0;
+    }
   }
 
   .project-nav {

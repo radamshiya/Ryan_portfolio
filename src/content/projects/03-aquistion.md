@@ -4,6 +4,8 @@ summary: "Crafting a strategy for integrating 10,000ft and Smartsheet."
 role: "Lead Researcher"
 date: "2019"
 image: "/images/10kft_smartsheet.png"
+imageAlt: "Screenshot of the 10,000ft console showing the resourcing timeline view"
+imageCaption: "10,000ft resource management interface showing team scheduling and capacity planning"
 featured: true
 ---
 

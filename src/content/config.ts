@@ -8,6 +8,8 @@ const projectsCollection = defineCollection({
     role: z.string().optional(),
     date: z.string().optional(),
     image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    imageCaption: z.string().optional(),
     featured: z.boolean().optional().default(false),
   }),
 });

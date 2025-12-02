@@ -4,6 +4,8 @@ summary: "We fixed broken call center analytics through research, analysis, and 
 role: "Lead Researcher"
 date: "2024"
 image: "/images/hiya_connect.png"
+imageAlt: "Hiya Connect analytics dashboard showing call center metrics and data visualizations"
+imageCaption: "Redesigned Hiya Connect Dashboard"
 featured: true
 ---
 

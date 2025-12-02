@@ -4,6 +4,8 @@ summary: "Creating a design system for conversations applicable to new zero-to-o
 role: "Research & Strategy"
 date: "2024–2025"
 image: "/images/machines_talking.png"
+imageAlt: "Four Hiya team members setting around a table and testing conversational voice user experiences"
+imageCaption: "Hiya team members testing and troubleshooting conversational voice experiences"
 featured: true
 ---
 

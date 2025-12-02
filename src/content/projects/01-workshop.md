@@ -1,9 +1,11 @@
 ---
 title: "Shaping the Future of AI Within Research and Design"
-summary: "Crafting AI workshops for the University of Washington’s Master of Human-Computer Interaction and Design program."
+summary: "Crafting AI workshops for the University of Washington's Master of Human-Computer Interaction and Design program."
 role: "Co-Instructor and Curriculum Designer"
 date: "2025"
 image: "/images/ryan_sarah_workshop.png"
+imageAlt: "Ryan Adams and Sarah Outhwaite presenting an AI workshop to students at the University of Washington"
+imageCaption: "Co-instructors Ryan Adams and Sarah Outhwaite leading a hands-on AI workshop session for MHCI+D students"
 featured: true
 ---
 
@@ -35,13 +37,18 @@ I served as co-instructor and curriculum designer, partnering closely with Sarah
 
 ## Approach
 
+<figure class="float-right">
+  <img src="/images/ryan_presenting.jpg" alt="Ryan presenting at UW in front of a slide that reads 'Assessing Risk'" />
+  <figcaption>Presenting during AI Workshops in 2025</figcaption>
+</figure>
+
 We designed a three-part workshop series, with each session lasting three hours and delivered week over week. Ahead of the workshops, we spent roughly six weeks aligning on perspective and defining a clear foundation for teaching generative AI.
-<br><br>
+
 Given how broad and hype-driven the AI landscape had become, we intentionally scoped the curriculum to focus on generative AI as it is actually built and used in practice. We addressed media narratives directly, contrasted them with real adoption patterns, and used historical technology shifts to contextualize how unusually fast AI adoption has been.
-<br><br>
+
 Once that foundation was established, the workshops moved into practical application, including designing for AI, using AI within the design process, prompt design, usability testing, risk management, and the limitations of analogy and metaphor when describing AI systems.
-<br><br>
-Sessions were intentionally hands-on, prioritizing experimentation, discussion, and learning through practice rather than prescribing a single “right” way to work with AI.
+
+Sessions were intentionally hands-on, prioritizing experimentation, discussion, and learning through practice rather than prescribing a single "right" way to work with AI.
 
 ## Findings
 
