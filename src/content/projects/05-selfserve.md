@@ -3,7 +3,7 @@ title: "White Glove to Self-Service"
 summary: "Creating a self-service experience for a historically human-led onboarding process."
 role: "Lead Researcher & Strategist"
 date: "2025"
-image: "/images/white_glove_self_service.png"
+image: "/images/signup_page.png"
 featured: true
 ---
 <div class="two-column">
@@ -43,7 +43,7 @@ I led all research and strategy to prove that a self-service channel was both fe
 
 <figure class="float-right">
   <img src="/images/connect_journey_map.png" alt="A high level view of a detailed customer journey map for Hiya Connect'" />
-  <figcaption>Journey map used to illustrate the pre-self service experience.-</figcaption>
+  <figcaption>Journey map used to illustrate the pre-self service experience</figcaption>
 </figure>
 
 We started by interviewing stakeholders across the existing sales-led journey, speaking with each person involved at every handoff point. This gave us a detailed view of how onboarding actually worked in practice, including the invisible work teams were doing to compensate for system gaps.
